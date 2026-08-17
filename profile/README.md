@@ -43,6 +43,10 @@ AI 直接维护工程源码，引擎专注于资源、编译、运行和结果�
 
 DSH 原生的 Cocos AI 开发工作台。把对话、Headless Cocos 实时预览、节点树和运行时 Inspector 放在同一个界面中。
 
+### [ViewWeaver](https://github.com/kurenai-studio/ViewWeaver)
+
+从 Cocos Prefab 生成强类型 View 绑定，把节点结构转化为 AI 和 TypeScript 可以稳定理解、引用与维护的源码契约。
+
 ### [assetsSrcAPI](https://github.com/kurenai-studio/assetsSrcAPI)
 
 AI 时代的数字资产供应链层。统一外部资源来源、内容寻址存储、版权与来源信息，以及面向 Cocos 等执行后端的导入适配。
@@ -69,6 +73,7 @@ flowchart LR
     E --> P[实时预览与反馈]
     P --> A
     R[外部资源生产<br/>assetsSrcAPI] --> S
+    V[Prefab 强类型绑定<br/>ViewWeaver] --> S
 ```
 
 引擎仍然负责确定性的资源导入、编译、渲染、运行和构建。  
