@@ -6,14 +6,22 @@
 
 **AI 是作者 · 源码是事实 · 引擎是可替换的执行后端**
 
-我们正在构建一套面向 AI 时代的游戏开发工具链：  
-AI 直接维护工程源码，引擎专注于资源、编译、运行和结果验证。
-
-[Kurenai Studio](https://github.com/kurenai-studio/kurenai) ·
-[技术设计](https://github.com/kurenai-studio/kurenai/blob/main/docs/技术文档.md) ·
-[安装方法](https://github.com/kurenai-studio/kurenai/blob/main/docs/安装方法.md)
+[Kurenai](https://github.com/kurenai-studio/kurenai) 是 PinK 的升级版：  
+**项目管理 · 资源编译 · 预览 · 构建** 在同一产品里。只需安装 kurenai，不要单独装完整 cocos-cli / PinK。
 
 </div>
+
+---
+
+## 一句话安装（给 Agent）
+
+把下面整段丢给任务 Agent，它即可自学安装并开始做游戏：
+
+```text
+自学并只用最新 kurenai（https://github.com/kurenai-studio/kurenai：clone 后 Node.js 22+ 下 `npm install && npm link`；不要单独安装完整 cocos-cli / PinK）开发 Cocos 游戏：`kurenai init` → `host start` → 按项目 `AGENTS.md` 只改 `assets/game/` 与 `assets/resources/`，用 `asset info` / `logs` / `context` 闭环，禁止手写 .meta、prefab 不挂脚本；交付时再 `kurenai publish --platform web-desktop`。
+```
+
+人手动入口：[安装方法](https://github.com/kurenai-studio/kurenai/blob/main/docs/安装方法.md) · [简单使用方法](https://github.com/kurenai-studio/kurenai/blob/main/docs/简单使用方法.md) · [技术设计](https://github.com/kurenai-studio/kurenai/blob/main/docs/技术文档.md)
 
 ---
 
@@ -34,14 +42,14 @@ AI 直接维护工程源码，引擎专注于资源、编译、运行和结果�
 - **Source-first** — 所有有效修改最终固化到工程文件。
 - **Engine-light** — 引擎退回为资源编译器、运行时和结果验证器。
 - **Agent-native** — 项目上下文、节点选择和运行反馈直接进入 Agent。
-- **Asset-independent** — 资源生产独立于具体引擎和供应商。
+- **One install** — clone kurenai 即可；运行时自带于 `vendor/cocos-core`。
 - **Reproducible** — 修改可比较、可审查、可回滚、可自动验证。
 
 ## Projects
 
-### [Kurenai Studio](https://github.com/kurenai-studio/kurenai)
+### [Kurenai](https://github.com/kurenai-studio/kurenai)
 
-DSH 原生的 Cocos AI 开发工作台。把对话、Headless Cocos 实时预览、节点树和运行时 Inspector 放在同一个界面中。
+PinK 继任的 Cocos AI 开发工作台：CLI + 内置裁剪运行时，覆盖项目、资源、预览与 web 构建；Agent 用一句话即可装好环境。
 
 ### [ViewWeaver](https://github.com/kurenai-studio/ViewWeaver)
 
@@ -81,15 +89,15 @@ AI 负责理解意图、修改工程、分析结果并持续迭代。
 
 ## Current focus
 
-- 完善 Kurenai 与 DSH 的原生工作流。
-- 缩短源码修改到 Headless Cocos 预览之间的反馈时间。
+- 稳定「一句话安装 → init → host → publish」全新机器闭环。
+- 缩短源码修改到预览反馈的时间。
 - 将 assetsSrcAPI 接入项目资源生产和导入流程。
-- 统一 Cocos Inspector 与 Kurenai 的运行时观察能力。
+- 统一运行时观察能力与 Agent 可读的错误/选中上下文。
 - 建立可验证、可回滚的源码级 Scene 与 Prefab 修改能力。
 
 ## Status
 
-项目仍处于快速演进阶段。接口、工程格式和安装流程可能发生变化，欢迎通过各仓库的 Issues 参与讨论。
+项目仍处于快速演进阶段。接口与工程格式可能变化，欢迎通过各仓库 Issues 参与讨论。
 
 <div align="center">
 
