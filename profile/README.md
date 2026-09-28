@@ -18,7 +18,7 @@
 把下面整段丢给任务 Agent，它即可自学安装并开始做游戏：
 
 ```text
-自学并只用最新 kurenai（https://github.com/kurenai-studio/kurenai：clone 后 Node.js 22+ 下 `npm install && npm link`；不要单独安装完整 cocos-cli / PinK）开发 Cocos 游戏：`kurenai init` → `host start` → 按项目 `AGENTS.md` 只改 `assets/game/` 与 `assets/resources/`，用 `asset info` / `logs` / `context` 闭环，禁止手写 .meta、prefab 不挂脚本；交付时再 `kurenai publish --platform web-desktop`。
+自学并只用最新 kurenai（https://github.com/kurenai-studio/kurenai：clone 后 Node.js 22+ 下 `npm install && npm link`；不要单独安装完整 cocos-cli / PinK）开发 Cocos 游戏：`kurenai init` → `host start` → 按项目 `AGENTS.md` 只改 `assets/game/` 与 `assets/resources/`，用 `asset info` / `logs` / `context` 闭环，`.meta` 由引擎生成、不要手写；`.prefab` / `.mtl` 可以直接手写，但 prefab 里不挂脚本组件，行为写在 TS 里用 `addComponent` 挂上；交付时再 `kurenai publish --platform web-desktop`。
 ```
 
 人手动入口：[安装方法](https://github.com/kurenai-studio/kurenai/blob/main/docs/安装方法.md) · [简单使用方法](https://github.com/kurenai-studio/kurenai/blob/main/docs/简单使用方法.md) · [技术设计](https://github.com/kurenai-studio/kurenai/blob/main/docs/技术文档.md)
